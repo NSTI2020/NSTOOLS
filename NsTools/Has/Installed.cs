@@ -12,7 +12,7 @@ namespace NsTools.Has
         /// Search path must be a folder before
         /// </summary>
         /// //Tests
-        
+
         private List<string> lstInstalled { get; set; }
         private string strUninstall { get; set; }
         private string PropertName { get; set; }
@@ -36,7 +36,7 @@ namespace NsTools.Has
                 TBaseRegistry = Registry.CurrentUser.OpenSubKey(KeyToSearch);
             }
         }
-        public string SearchPropertName(string name)
+        public string SearchUninstallStringExe(string name)
         {
             using (RegistryKey rk = TBaseRegistry)
             {
@@ -60,6 +60,38 @@ namespace NsTools.Has
 
             return strUninstall;
         }
+
+        public string SearchUninstallStringExeMsi(string name)
+        {
+            using (RegistryKey rk = TBaseRegistry)
+            {
+                foreach (string skName in rk.GetSubKeyNames())
+                {
+                    using (RegistryKey sk = rk.OpenSubKey(skName))
+                    {
+                        try
+                        {
+                            if (sk.GetValue(PropertName).ToString().Contains(name))
+                            {
+                                return sk.GetValue("UninstallString").ToString();
+                            }
+                        }
+                        catch (Exception)
+                        { }
+                    }
+                }
+            }
+            return strUninstall;
+        }
+
+
+
+
+
+
+
+
+
 
         /*public List<string> test(string name)
         {

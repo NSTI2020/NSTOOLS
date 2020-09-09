@@ -15,9 +15,9 @@ namespace NsTools.Installer
         private ProcessInvoke Invoke { get; set; }
         private Installed installedX64LM { get; set; }
 
-       public InstUninst()
+        public InstUninst()
         {
-            
+
         }
 
         public InstUninst(string path, string args)
@@ -33,20 +33,24 @@ namespace NsTools.Installer
         {
             Invoke = new ProcessInvoke(path, args);
             Invoke.InvokeProc();
+            Console.ReadKey();
         }
-        
-        public async Task AppOnline(string urlToDown, string downFileTarget, string args)
+
+        public async Task AppOnline(string urlToDown, string downFileTarget)
         {
-           Online = new Download(urlToDown, downFileTarget);
+            Online = new Download(urlToDown, downFileTarget);
             await Online.GetThis();
-
         }
-        public string GetStringUninstall(string name, string registryHive, string regKey, string nameInValue)
+        public string GetStringUninstallExe(string name, string registryHive, string regKey, string propertyName)
         {
-            installedX64LM = new Installed(registryHive, regKey, nameInValue);
-            return installedX64LM.SearchPropertName(name);
+            installedX64LM = new Installed(registryHive, regKey, propertyName);
+            return installedX64LM.SearchUninstallStringExe(name);
         }
-
+        public string GetStringUninstallMsi(string name, string registryHive, string regKey, string propertyName)
+        {
+            installedX64LM = new Installed(registryHive, regKey, propertyName);
+            return installedX64LM.SearchUninstallStringExeMsi(name);
+        }
 
 
     }

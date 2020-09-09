@@ -18,8 +18,9 @@ namespace NsTools.Procs
         {
             FName = fName;
             Args = args;
+          
             ProcStartInf = new ProcessStartInfo(fName, args);
-            
+            ProcStartInf.UseShellExecute = true;
         }
 
         public void InvokeProc()

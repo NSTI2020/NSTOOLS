@@ -24,11 +24,7 @@ namespace NsTools.Apps.Installers
 
         private bool ExecutableExist()
         {
-<<<<<<< HEAD
 
-=======
-            //If file exists
->>>>>>> 6596a7ebb1cf3dfc5e7138c4760dc9b2725ea4cb
             _exists = new Exists(@"c:\", "TeamViewer.exe");
             return _exists.SearchCheckFileExist();
         }
@@ -44,11 +40,8 @@ namespace NsTools.Apps.Installers
         {
             bool uninstalled = false;
             _installUninstall = new InstUninst();
-            string uninstallString = _installUninstall.GetStringUninstall("TeamViewer", "LocalMachine", @"SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall", "UninstallString");
-<<<<<<< HEAD
-=======
+            string uninstallString = _installUninstall.GetStringUninstallExe("TeamViewer", "LocalMachine", @"SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall", "UninstallString");
 
->>>>>>> 6596a7ebb1cf3dfc5e7138c4760dc9b2725ea4cb
             if (ExecutableExist())
             {
                 _msgsApps.WriteMsg("Localizando alguma instalação do Team Viewer. Por favor, aguarde!");
@@ -62,44 +55,28 @@ namespace NsTools.Apps.Installers
                 uninstalled = true;
 
             }
-<<<<<<< HEAD
-=======
 
->>>>>>> 6596a7ebb1cf3dfc5e7138c4760dc9b2725ea4cb
             return uninstalled;
         }
         private async Task GetOnlineExecutableAndInstall()
         {
             _destination = Path.Combine(_userProfile, "Downloads\\");
             _installUninstall = new InstUninst();
-            await _installUninstall.AppOnline("https://dl.teamviewer.com/download/version_15x/TeamViewer_Setup.exe", _destination + "TVInstall.exe", "/S");
+            await _installUninstall.AppOnline("https://dl.teamviewer.com/download/version_15x/TeamViewer_Setup.exe", _destination + "TVInstall.exe");
             InstallNow();
 
         }
         private void InstallNow()
         {
-<<<<<<< HEAD
             _installUninstall = new InstUninst(_destination + "\\TVInstall.exe", "/S");
-=======
-            _installUninstall = new InstUninst(@"c:\users\marcus\Downloads\TVInstall.exe", "/S");
-            
->>>>>>> 6596a7ebb1cf3dfc5e7138c4760dc9b2725ea4cb
             _msgsApps.WriteMsg("Instalando, Team Viewer. Por favor, aguarde!");
             _installUninstall.App();
             _msgsApps.CleanMsgs();
             _installUninstall = new InstUninst(@"C:\Program Files (x86)\TeamViewer\TeamViewer.exe", "");
             _installUninstall.App();
             _msgsApps.WriteMsg("Instalado, Abra o ícone azul com o nome TeamViewer em sua área de trabalho. Por favor!");
-<<<<<<< HEAD
-            Console.ReadKey();
-=======
-
 
             Console.ReadKey();
-
-           
-   
->>>>>>> 6596a7ebb1cf3dfc5e7138c4760dc9b2725ea4cb
         }
         public async Task TeamViewerFix()
         {
