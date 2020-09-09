@@ -36,18 +36,20 @@ namespace NsTools.Apps.Installers
             _msgsApps.CleanMsgs();
             _msgsApps.WriteMsg("AnyDesk, foi encontrado e esta sendo " +
              "desinstalado. Por favor, aguarde!");
-            _installUninstall.Uninstall(uninstallString, "/qn");
+            _installUninstall.Uninstall("Msiexec", " /"+uninstallString);
         }
         private bool UninstallAction()
         {
             bool uninstalled = false;
             _installUninstall = new InstUninst();
             string uninstallString = _installUninstall.GetStringUninstallMsi("AnyDesk MSI", "LocalMachine", @"SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall", "DisplayName");
-            
+            string args = uninstallString.Substring(13, 39);
+            string UninstallArgs = (args += " /qn");
+
             if (ExecutableExist())
             {
                 _msgsApps.WriteMsg("Localizando alguma instalação do AnyDesk. Por favor, aguarde!");
-                Uninstall(uninstallString);
+                Uninstall(UninstallArgs);
                 do
                 {
                     _msgsApps.WriteMsg("Desistalando AnyDesk. Por favor, aguarde!");

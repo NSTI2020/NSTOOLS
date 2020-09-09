@@ -12,24 +12,10 @@ namespace NsTools
     {
         static async Task Main(string[] args)
         {
-            /*
-             TeamViewer teamViewer = new TeamViewer();
-             await teamViewer.TeamViewerFix();
-
-       AnyDesk anyDesk = new AnyDesk();
-
-        await anyDesk.AnyDeskFix();*/
-
-
-            InstUninst Inst = new InstUninst();
-            string save = Inst.GetStringUninstallMsi("AnyDesk MSI", "LocalMachine", @"SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall", "DisplayName");
-
-           save.Replace()
-            
-            Console.WriteLine(Inst.GetStringUninstallMsi("AnyDesk MSI", "LocalMachine", @"SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall", "DisplayName"));
-
-
-
+            AnyDesk anyDesk = new AnyDesk();
+            TeamViewer teamViewer = new TeamViewer();
+            await teamViewer.TeamViewerFix();
+            await anyDesk.AnyDeskFix();
         }
 
 

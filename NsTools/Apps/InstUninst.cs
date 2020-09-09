@@ -33,7 +33,6 @@ namespace NsTools.Installer
         {
             Invoke = new ProcessInvoke(path, args);
             Invoke.InvokeProc();
-            Console.ReadKey();
         }
 
         public async Task AppOnline(string urlToDown, string downFileTarget)
