@@ -1,31 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Text;
+﻿using System.Diagnostics;
 
 namespace NsTools.Procs
 {
     class ProcessInvoke
     {
-       private ProcessStartInfo ProcStartInf { get; set; }
-       private string FName { get; set; }
-       private bool StandartOutput { get; set; }
-       private bool ShellExecute { get; set; }
-       private string Args { get; set; }
-
+       private ProcessStartInfo _procStartInf { get; set; }
+       private string _fName { get; set; }
+       private bool _standartOutput { get; set; }
+       private bool _shellExecute { get; set; }
+       private string _args { get; set; }
 
         public ProcessInvoke(string fName, string args)
         {
-            FName = fName;
-            Args = args;
-          
-            ProcStartInf = new ProcessStartInfo(fName, args);
-            ProcStartInf.UseShellExecute = true;
+            _fName = fName;
+            _args = args;
+            _procStartInf = new ProcessStartInfo(fName, args);
+            _procStartInf.UseShellExecute = true;
         }
 
         public void InvokeProc()
         {
-            Process.Start(ProcStartInf).WaitForExit();
+            Process.Start(_procStartInf).WaitForExit();
         }
 
 

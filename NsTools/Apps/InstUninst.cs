@@ -1,10 +1,6 @@
-﻿using NsTools.Apps.Installers;
-using NsTools.Has;
+﻿using NsTools.Has;
 using NsTools.Online;
 using NsTools.Procs;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace NsTools.Installer

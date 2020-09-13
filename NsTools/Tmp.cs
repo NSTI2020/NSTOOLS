@@ -1,17 +1,21 @@
-﻿/*static async Task Main(string[] args)
-{
-    foreach (string cmd in args)
-    {
-
-        switch (cmd.ToUpper())
+﻿/*
+ 
+      public List<string> OperatorMObjReturnsMany(string strWmi, string property)
         {
-            case "/TV":
-                TeamViewer teamViewer = new TeamViewer();
-                await teamViewer.TeamViewerFix();
+           _objSearch  = new ManagementObjectSearcher(new ObjectQuery(strWmi));
+            ManagementObjectCollection queryCollection = _objSearch.Get();
+            foreach (var qwe in queryCollection)
+            {
+                PropertyData data1 = qwe.Properties[property];
+                string[] T = (string[])data1.Value;
+                foreach (string item in T)
+                {
+                    _listReturn.Add(item);
+                }
                 break;
+            }
+            return _listReturn;
         }
-    }
-
 
 }
 
