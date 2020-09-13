@@ -1,21 +1,34 @@
 ﻿/*
  
-      public List<string> OperatorMObjReturnsMany(string strWmi, string property)
-        {
-           _objSearch  = new ManagementObjectSearcher(new ObjectQuery(strWmi));
-            ManagementObjectCollection queryCollection = _objSearch.Get();
-            foreach (var qwe in queryCollection)
+        
+            Console.WriteLine(p);
+            /*
+            DriveInfo[] allDrives = DriveInfo.GetDrives();
+
+            foreach (DriveInfo d in allDrives)
             {
-                PropertyData data1 = qwe.Properties[property];
-                string[] T = (string[])data1.Value;
-                foreach (string item in T)
+                Console.WriteLine("Drive {0}", d.Name);
+                Console.WriteLine("  Drive type: {0}", d.DriveType);
+                if (d.IsReady == true)
                 {
-                    _listReturn.Add(item);
+                    Console.WriteLine("  Volume label: {0}", d.VolumeLabel);
+                    Console.WriteLine("  File system: {0}", d.DriveFormat);
+                    Console.WriteLine(
+                        "  Available space to current user:{0, 15} bytes",
+                        d.AvailableFreeSpace);
+
+                    Console.WriteLine(
+                        "  Total available space:          {0, 15} bytes",
+                        d.TotalFreeSpace);
+
+                    Console.WriteLine(
+                        "  Total size of drive:            {0, 15} bytes ",
+                        d.TotalSize);
                 }
-                break;
             }
-            return _listReturn;
-        }
+
+    
+
 
 }
 

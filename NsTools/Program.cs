@@ -25,8 +25,13 @@ namespace NsTools
         public static void t()
         {
             Invocations Invoke = new Invocations();
+            //SystemEngine Sendine = new SystemEngine();
 
-            Console.WriteLine(Invoke.AssMemoryCapacity());
+                Console.WriteLine(Invoke.AssDiskSystemModel());
+        
+
+
+            
 
         }
         
