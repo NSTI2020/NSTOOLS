@@ -6,11 +6,13 @@ using NsTools.Installer;
 using System;
 using NsTools.Has;
 using NsTools.NetWork;
+using NsTools.Hardware.Basic;
 using System.Net.NetworkInformation;
 using System.Linq;
 using NsTools.NetWork.Configs;
 using System.Management;
 using System.Collections;
+
 
 namespace NsTools
 {
@@ -22,13 +24,11 @@ namespace NsTools
         }
         public static void t()
         {
-            BasicNetWorkInformation basic = new BasicNetWorkInformation();
+            Invocations Invoke = new Invocations();
 
-            Console.WriteLine(basic.AssActiveAdapterName());
-
+            Console.WriteLine(Invoke.AssMemoryCapacity());
 
         }
         
-
     }
 }

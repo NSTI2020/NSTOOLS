@@ -29,10 +29,7 @@ namespace NsTools.NetWork.Configs
         {
             return ip.Dns();
         }
-        public List<string> SubNetMask()
-        {
-            return ip.SubNetMask();
-        }
+
         public string AssDhcpServer()
         {
             return ip.ActDhcpServer();
@@ -41,8 +38,15 @@ namespace NsTools.NetWork.Configs
         {
             return ip.ActActiveAdapterName();
         }
-        
+        public string AssMac()
+        {
+            return ip.Mac();
+        }
 
+        public bool AssDhcpEnabled()
+        {
+            return ip.ActDhcpEnabled();
+        }
         public override string ToString()
         {
             return "IP: " + ShowIp() +

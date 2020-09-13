@@ -9,9 +9,8 @@ namespace NsTools.NetWork.Configs
     {
         private ManagementObjectSearcher _objSearch { get; set; }
         private string _OneReturn { get; set; }
-
+        private bool _OneReturnBool { get; set; }
         private List<string> _listReturn { get; set; }
-
         public Ip()
         {
             _listReturn = new List<string>();
@@ -31,6 +30,21 @@ namespace NsTools.NetWork.Configs
             }
             return _OneReturn;
         }
+        public bool OperatorMObjReturnsOneBool(string strWmi, string property)
+        {
+            _objSearch = new ManagementObjectSearcher(new ObjectQuery(strWmi));
+            ManagementObjectCollection queryCollection = _objSearch.Get();
+            foreach (var qwe in queryCollection)
+            {
+                PropertyData data1 = qwe.Properties[property];
+                bool T = (bool)data1.Value;
+
+                _OneReturnBool = T;
+
+                break;
+            }
+            return _OneReturnBool;
+        }
         public List<string> OperatorMObjReturnsMany(string strWmi, string property)
         {
             _objSearch = new ManagementObjectSearcher(new ObjectQuery(strWmi));
@@ -47,13 +61,15 @@ namespace NsTools.NetWork.Configs
             }
             return _listReturn;
         }
+
+
         public List<string> GetIP()
         {
             return OperatorMObjReturnsMany("SELECT * FROM Win32_NetworkAdapterConfiguration WHERE IPEnabled = 'TRUE'", "IpAddress");
         }
         public string ActActiveAdapterName()
         {
-            return OperatorMObjReturnsOne("SELECT * FROM Win32_NetworkAdapterConfiguration WHERE IPEnabled = 'TRUE'", "Caption");
+            return OperatorMObjReturnsOne("SELECT * FROM Win32_NetworkAdapterConfiguration WHERE IPEnabled = 'TRUE'", "Description");
         }
         public List<string> GetDefaultGatway()
         {
@@ -79,6 +95,15 @@ namespace NsTools.NetWork.Configs
             _OneReturn = OperatorMObjReturnsOne("SELECT * FROM Win32_NetworkAdapterConfiguration WHERE IPEnabled = 'TRUE'", "DHCPServer");
             return _OneReturn;
         }
-
+        public string Mac()
+        {
+            _OneReturn = OperatorMObjReturnsOne("SELECT * FROM Win32_NetworkAdapterConfiguration WHERE IPEnabled = 'TRUE'", "MACAddress");
+            return _OneReturn;
+        }
+        public bool ActDhcpEnabled()
+        {
+            _OneReturnBool = OperatorMObjReturnsOneBool("SELECT * FROM Win32_NetworkAdapterConfiguration WHERE IPEnabled = 'TRUE'", "DHCPEnabled");
+            return _OneReturnBool;
+        }
     }
 }
