@@ -14,10 +14,15 @@ namespace NsTools.Useful
 
         public Tools()
         {
+            //User profile path below
             _profile = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
-            _downloadPath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\Downloads";
+            //Download path
+            _downloadPath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + @"\Downloads";
+            //where will extracted below
             _setupOfficePathExtracted = _profile + @"\Office2013";
+            //zip to be extracted below
             _zipOffice2013 = _downloadPath + @"\Office2013.zip";
+            //Install executable below
             _SetupExeOffice2013 = _setupOfficePathExtracted + @"\setup.exe";
 
         }

@@ -29,7 +29,7 @@ namespace NsTools.Apps.Installers
 
         public async Task DownloadOff2013()
         {
-            await _installUninstall.AppOnline("http://www.nostopti.com/tvirtual/toolbox/instalations/office2013.zip", _destination + "Office2013.zip");
+            await _installUninstall.AppOnline("http://www.nostopti.com/tvirtual/toolbox/instalations/office2013.zip", _destination + @"\Office2013.zip");
             ExtractOffice2013();
         }
         public void ExtractOffice2013()
@@ -40,8 +40,6 @@ namespace NsTools.Apps.Installers
 
         public void InstallOffice2013()
         {
-            Console.WriteLine(_setupExe);
-            Console.ReadLine();
             InstUninst install = new InstUninst(_setupExe, " /AdminFile auto.msp");
             install.App();
         }
