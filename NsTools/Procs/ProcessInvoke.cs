@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Threading.Tasks;
 
 namespace NsTools.Procs
 {
@@ -22,6 +23,10 @@ namespace NsTools.Procs
         {
             Process.Start(_procStartInf).WaitForExit();
         }
+
+
+       // public async Task AsycInvokeProc()
+
 
 
     }

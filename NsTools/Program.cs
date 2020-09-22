@@ -12,28 +12,28 @@ using System.Linq;
 using NsTools.NetWork.Configs;
 using System.Management;
 using System.Collections;
-
+using NsTools.Repairs.Basic;
+using System.IO;
+using NsTools.Useful;
 
 namespace NsTools
 {
     class Program
     {
-        public static void Main(string[] args)
+        public async static Task Main(string[] args)
         {
-            t();
+           Office2013 office = new Office2013();
+           await office.DownloadOff2013();
+           office.InstallOffice2013();
         }
-        public static void t()
-        {
-            Invocations Invoke = new Invocations();
-            //SystemEngine Sendine = new SystemEngine();
-
-                Console.WriteLine(Invoke.AssDiskSystemModel());
-        
+   
 
 
-            
 
-        }
-        
+
+
+
+
+
     }
 }

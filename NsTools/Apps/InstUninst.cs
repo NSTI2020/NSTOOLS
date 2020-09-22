@@ -25,6 +25,8 @@ namespace NsTools.Installer
             Invoke.InvokeProc();
         }
 
+        
+
         public void Uninstall(string path, string args)
         {
             Invoke = new ProcessInvoke(path, args);
