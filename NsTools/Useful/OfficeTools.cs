@@ -4,7 +4,7 @@ using System.Text;
 
 namespace NsTools.Useful
 {
-    public class Tools
+    public class OfficeTools
     {
         private string  _profile { get; set; }
         private string  _downloadPath { get; set; }
@@ -12,7 +12,7 @@ namespace NsTools.Useful
         public string _zipOffice2013 { get; set; }
         public string _SetupExeOffice2013 { get; set; }
 
-        public Tools()
+        public OfficeTools()
         {
             //User profile path below
             _profile = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);

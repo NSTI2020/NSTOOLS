@@ -6,7 +6,6 @@ namespace NsTools.Useful
 {
     public class Converters
     {
-
         public String ConvertSize(double size)
         {
             String[] units = new String[] { "B", "KB", "MB", "GB", "TB", "PB" };
@@ -22,7 +21,5 @@ namespace NsTools.Useful
             }
             return Math.Round(size, 2) + " " + units[i];//with 2 decimals
         }
-
-
     }
 }

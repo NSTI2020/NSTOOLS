@@ -14,7 +14,6 @@ namespace NsTools.Apps.Installers
         private string _userProfile { get; set; }
         private string _destination { get; set; }
         private MsgsApps _msgsApps { get; set; }
-        private ProcessInvoke Invoke { get; set; }
         public TeamViewer()
         {
             _msgsApps = new MsgsApps();
