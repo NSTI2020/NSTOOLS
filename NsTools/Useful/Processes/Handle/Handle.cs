@@ -1,11 +1,12 @@
 ﻿using System.Diagnostics;
-namespace NsTools.Procs
+
+namespace NsTools.Useful.Processes.Handle
 {
-    class ProcessHandle
+    class Handle
     {
         private Process[] Processes { get; set; }
         private bool Killed { get; set; }
-        public ProcessHandle()
+        public Handle()
         {
 
         }

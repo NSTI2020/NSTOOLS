@@ -1,51 +1,51 @@
 ﻿
 using System.Collections.Generic;
 
-namespace NsTools.NetWork.Configs
+namespace NsTools.NetWork.GetConfigs
 {
     public class BasicNetWorkInformation
     {
-        public Ip ip { get; set; }
+        private Ip _ip { get; set; }
 
         public BasicNetWorkInformation()
         {
-          ip = new Ip();
+          _ip = new Ip();
         }
         //Get IP address of  network adapter active
         public List<string> ShowIp()
         {
-            return ip.GetIP();
+            return _ip.GetIP();
         }
 
         public List<string> ShowDefaulGatway()
         {
-            return ip.GetDefaultGatway();
+            return _ip.GetDefaultGatway();
         }
         public List<string> Domain()
         {
-            return ip.Domain();
+            return _ip.Domain();
         }
         public List<string> Dns()
         {
-            return ip.Dns();
+            return _ip.Dns();
         }
 
         public string AssDhcpServer()
         {
-            return ip.ActDhcpServer();
+            return _ip.ActDhcpServer();
         }
         public string AssActiveAdapterName()
         {
-            return ip.ActActiveAdapterName();
+            return _ip.ActActiveAdapterName();
         }
         public string AssMac()
         {
-            return ip.Mac();
+            return _ip.Mac();
         }
 
         public bool AssDhcpEnabled()
         {
-            return ip.ActDhcpEnabled();
+            return _ip.ActDhcpEnabled();
         }
         public override string ToString()
         {

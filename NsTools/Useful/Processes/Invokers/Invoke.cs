@@ -1,9 +1,9 @@
 ﻿using System.Diagnostics;
 using System.Threading.Tasks;
 
-namespace NsTools.Procs
+namespace NsTools.Useful.Processes
 {
-    class ProcessInvoke
+    class Invoke
     {
        private ProcessStartInfo _procStartInf { get; set; }
        private string _fName { get; set; }
@@ -11,7 +11,7 @@ namespace NsTools.Procs
        private bool _shellExecute { get; set; }
        private string _args { get; set; }
 
-        public ProcessInvoke(string fName, string args)
+        public Invoke(string fName, string args)
         {
             _fName = fName;
             _args = args;
@@ -23,11 +23,6 @@ namespace NsTools.Procs
         {
             Process.Start(_procStartInf).WaitForExit();
         }
-
-
-       // public async Task AsycInvokeProc()
-
-
 
     }
 }

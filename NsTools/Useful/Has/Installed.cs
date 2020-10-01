@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 
 
-namespace NsTools.Has
+namespace NsTools.Useful.Has
 {
     public class Installed
     {

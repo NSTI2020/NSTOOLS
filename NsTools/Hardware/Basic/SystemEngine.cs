@@ -1,4 +1,4 @@
-﻿using NsTools.Useful;
+﻿using NsTools.Useful.Generic;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -14,10 +14,9 @@ namespace NsTools.Hardware.Basic
         private List<string> _listReturn { get; set; }
         private Converters _converter { get; set; }
         private string _oneReturn { get; set; }
-        public DriveInfo _drvInfo { get; set; }
+        private DriveInfo _drvInfo { get; set; }
         private long _drvInfoSize { get; set; }
         private long _drvInfoSizeFreeSpace { get; set; }
-
 
         public SystemEngine()
         {
@@ -25,7 +24,6 @@ namespace NsTools.Hardware.Basic
             _converter = new Converters();
             _drvInfo = new DriveInfo(Path.GetPathRoot(Environment.SystemDirectory));
         }
-
         public UInt64 OperatorMObjReturnsOneUint64(string strWmi, string property)
         {
             _objSearch = new ManagementObjectSearcher(new ObjectQuery(strWmi));
@@ -54,7 +52,6 @@ namespace NsTools.Hardware.Basic
             }
             return _oneReturn;
         }
-
         public List<string> OperatorMObjReturnsMany(string strWmi, string property)
         {
             _objSearch = new ManagementObjectSearcher(new ObjectQuery(strWmi));
@@ -72,19 +69,14 @@ namespace NsTools.Hardware.Basic
             }
             return _listReturn;
         }
-
-
-
         public string ActMemoryCapacity()
         {
             return _converter.ConvertSize(OperatorMObjReturnsOneUint64("SELECT * FROM Win32_ComputerSystem", "TotalPhysicalMemory"));
         }
-
         public string ActProcessorClock()
         {
             return OperatorMObjReturnsOne("SELECT * FROM Win32_Processor", "Name");
         }
-
         public string ActSystemDivre()
         {
             _drvInfoSize = _drvInfo.TotalSize;
@@ -99,7 +91,6 @@ namespace NsTools.Hardware.Basic
         //Fix
         public string ActSystemDivreModel()
         {
-            
             return OperatorMObjReturnsOne("SELECT * FROM Win32_DiskDrive", "MediaType");
         }
 

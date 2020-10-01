@@ -1,14 +1,13 @@
-﻿using NsTools.Has;
-using NsTools.Online;
-using NsTools.Procs;
+﻿using NsTools.Online;
+using NsTools.Useful.Has;
 using System.Threading.Tasks;
 
-namespace NsTools.Installer
+namespace NsTools.Useful.Processes.Installers
 {
     public class InstUninst
     {
         private Download Online { get; set; }
-        private ProcessInvoke Invoke { get; set; }
+        private Invoke Invoke { get; set; }
         private Installed installedX64LM { get; set; }
 
         public InstUninst()
@@ -18,7 +17,7 @@ namespace NsTools.Installer
 
         public InstUninst(string path, string args)
         {
-            Invoke = new ProcessInvoke(path, args);
+            Invoke = new Invoke(path, args);
         }
         public void App()
         {
@@ -29,7 +28,7 @@ namespace NsTools.Installer
 
         public void Uninstall(string path, string args)
         {
-            Invoke = new ProcessInvoke(path, args);
+            Invoke = new Invoke(path, args);
             Invoke.InvokeProc();
         }
 

@@ -1,5 +1,5 @@
-﻿using NsTools.Installer;
-using NsTools.Useful;
+﻿using NsTools.Useful.Processes.Installers;
+using NsTools.Useful.Generic;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,7 +10,7 @@ namespace NsTools.Apps.Installers
 {
     class Office2013
     {
-        private OfficeTools tools;
+        private OfficeTools _tools;
         private InstUninst _installUninstall;
         private string _destination;
         private string _source;
@@ -20,12 +20,12 @@ namespace NsTools.Apps.Installers
 
         public Office2013()
         {
-            tools = new OfficeTools();
+            _tools = new OfficeTools();
             _installUninstall = new InstUninst();
-            _source = tools.Paths("ZipFile");
-            _proFile = tools.Paths("UserProfile");
-            _destination = tools.Paths("Downloads");
-            _setupExe = tools.Paths("SetupExe");
+            _source = _tools.Paths("ZipFile");
+            _proFile = _tools.Paths("UserProfile");
+            _destination = _tools.Paths("Downloads");
+            _setupExe = _tools.Paths("SetupExe");
             _msgsApps = new MsgsApps();
         }
 

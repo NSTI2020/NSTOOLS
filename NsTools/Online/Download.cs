@@ -1,4 +1,4 @@
-﻿using NsTools.Apps.Installers;
+﻿using NsTools.Useful.Generic;
 using System;
 using System.IO;
 using System.Net.Http;

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace NsTools.Has
+namespace NsTools.Useful.Has
 {
     public class Exists
     {

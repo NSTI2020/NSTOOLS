@@ -3,7 +3,7 @@ using System.Linq;
 using System.Management;
 
 
-namespace NsTools.NetWork.Configs
+namespace NsTools.NetWork.GetConfigs
 {
     public class Ip
     {

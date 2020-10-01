@@ -1,9 +1,10 @@
 ﻿using System;
 using System.IO;
 using System.Threading.Tasks;
-using NsTools.Has;
-using NsTools.Installer;
-using NsTools.Procs;
+using NsTools.Useful.Has;
+using NsTools.Useful.Processes.Installers;
+using NsTools.Useful.Generic;
+using NsTools.Useful.Processes.Handle;
 
 namespace NsTools.Apps.Installers
 {
@@ -14,7 +15,7 @@ namespace NsTools.Apps.Installers
         private string _userProfile { get; set; }
         private string _destination { get; set; }
         private MsgsApps _msgsApps { get; set; }
-        private ProcessHandle processHandle{ get; set; }
+        private Handle _processHandle{ get; set; }
 
         public AnyDesk()
         {
@@ -79,8 +80,8 @@ namespace NsTools.Apps.Installers
         }
         private bool killProcess()
         {
-            processHandle = new ProcessHandle();
-           return processHandle.KillProcessByName("AnyDeskMSI");
+            _processHandle = new Handle();
+           return _processHandle.KillProcessByName("AnyDeskMSI");
         }
 
 

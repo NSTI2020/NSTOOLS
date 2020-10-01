@@ -1,5 +1,6 @@
 ﻿using System;
-namespace NsTools.Apps.Installers
+
+namespace NsTools.Useful.Generic
 {
     class MsgsApps
     {

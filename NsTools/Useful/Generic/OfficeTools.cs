@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace NsTools.Useful
+namespace NsTools.Useful.Generic
 {
     public class OfficeTools
     {
         private string  _profile { get; set; }
         private string  _downloadPath { get; set; }
         private string  _setupOfficePathExtracted { get; set; }
-        public string _zipOffice2013 { get; set; }
-        public string _SetupExeOffice2013 { get; set; }
+        private string _zipOffice2013 { get; set; }
+        private string _SetupExeOffice2013 { get; set; }
 
         public OfficeTools()
         {
