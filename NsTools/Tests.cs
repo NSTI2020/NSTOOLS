@@ -1,13 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 
 namespace NsTools
 {
-   public  class Tests_
+    class Tests
     {
-       
+        ProcessStartInfo Processes;
 
+        public Tests()
+        {
+            Processes = new ProcessStartInfo();
+        }
 
 
     }

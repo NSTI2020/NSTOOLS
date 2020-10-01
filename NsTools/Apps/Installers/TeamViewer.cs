@@ -3,7 +3,7 @@ using NsTools.Useful.Processes.Installers;
 using System;
 using System.IO;
 using System.Threading.Tasks;
-using NsTools.Useful.Generic;
+using NsTools.Useful.Generics;
 namespace NsTools.Apps.Installers
 {
     class TeamViewer

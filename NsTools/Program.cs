@@ -13,30 +13,35 @@ using System.Collections;
 using NsTools.Repairs.Basic;
 using System.IO;
 using NsTools.Useful;
+using NsTools.Useful.Generics;
 
 namespace NsTools
 {
+    
     class Program
-    {
-        public async static Task Main(string[] args)
+    { 
+        public static void Main()
         {
+
+
+            var pp = @"~\Downloads".UserProfile();
+            Console.WriteLine(pp);
             //Office2013 office = new Office2013();
             //await office.DownloadOff2013();
             // office.InstallOffice2013();
 
-            Console.WriteLine("OKOKOKOKOK");
 
-            Console.ReadKey();
+
 
         }
-   
 
-
-
-
-
-
-
-
+       
     }
+
+
+
+
+
+
+
 }

@@ -1,4 +1,4 @@
-﻿using NsTools.Useful.Generic;
+﻿using NsTools.Useful.Generics;
 using System;
 using System.IO;
 using System.Net.Http;

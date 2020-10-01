@@ -3,7 +3,7 @@ using System.IO;
 using System.Threading.Tasks;
 using NsTools.Useful.Has;
 using NsTools.Useful.Processes.Installers;
-using NsTools.Useful.Generic;
+using NsTools.Useful.Generics;
 using NsTools.Useful.Processes.Handle;
 
 namespace NsTools.Apps.Installers

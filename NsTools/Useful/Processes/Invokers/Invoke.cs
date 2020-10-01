@@ -18,11 +18,16 @@ namespace NsTools.Useful.Processes
             _procStartInf = new ProcessStartInfo(fName, args);
             _procStartInf.UseShellExecute = true;
         }
-
         public void InvokeProc()
         {
             Process.Start(_procStartInf).WaitForExit();
         }
+
+
+
+
+
+
 
     }
 }

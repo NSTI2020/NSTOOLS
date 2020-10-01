@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace NsTools.Useful.Generic
+namespace NsTools.Useful.Generics
 {
     public class Converters
     {

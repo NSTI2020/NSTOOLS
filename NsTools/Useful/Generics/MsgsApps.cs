@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NsTools.Useful.Generic
+namespace NsTools.Useful.Generics
 {
     class MsgsApps
     {

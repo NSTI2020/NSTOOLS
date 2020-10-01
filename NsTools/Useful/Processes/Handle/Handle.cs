@@ -10,7 +10,6 @@ namespace NsTools.Useful.Processes.Handle
         {
 
         }
-
         public bool KillProcessByName(string name)
         {
             Killed = false;

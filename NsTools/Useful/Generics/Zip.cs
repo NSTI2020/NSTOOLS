@@ -5,19 +5,17 @@ using System.IO.Compression;
 using NsTools.Exceptions;
 using System.IO;
 
-namespace NsTools.Useful.Generic
+namespace NsTools.Useful.Generics
 {
     class Zip
     {
         private string _source { get; set; }
         private string _target { get; set; }
-
         public Zip(string source, string target)
         {
             _source = source;
             _target = target;
         }
-
         public void Unzip()
         {
             try
@@ -57,9 +55,5 @@ namespace NsTools.Useful.Generic
                 throw new ZipExceptions(e.Message);
             }
         }
-
-
-
-
     }
 }

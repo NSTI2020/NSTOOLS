@@ -1,5 +1,5 @@
 ﻿using NsTools.Useful.Processes.Installers;
-using NsTools.Useful.Generic;
+using NsTools.Useful.Generics;
 using System;
 using System.Collections.Generic;
 using System.IO;
