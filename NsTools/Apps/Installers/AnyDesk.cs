@@ -15,7 +15,7 @@ namespace NsTools.Apps.Installers
         private string _userProfile { get; set; }
         private string _destination { get; set; }
         private MsgsApps _msgsApps { get; set; }
-        private Handle _processHandle{ get; set; }
+        private Handle _processHandle { get; set; }
 
         public AnyDesk()
         {
@@ -32,12 +32,12 @@ namespace NsTools.Apps.Installers
         }
         private void Uninstall(string uninstallString)
         {
-         
+
             _installUninstall = new InstUninst();
             _msgsApps.CleanMsgs();
             _msgsApps.WriteMsg("AnyDesk, foi encontrado e esta sendo " +
              "desinstalado. Por favor, aguarde!");
-            _installUninstall.Uninstall("Msiexec", " /"+uninstallString);
+            _installUninstall.Uninstall("Msiexec", " /" + uninstallString);
         }
         private bool UninstallAction()
         {
@@ -75,16 +75,14 @@ namespace NsTools.Apps.Installers
             _installUninstall.App();
             _msgsApps.CleanMsgs();
             _installUninstall = new InstUninst(@"C:\Program Files (x86)\AnyDeskMSI\AnyDeskMSI.exe", "");
-             _installUninstall.App();
+            _installUninstall.App();
             _msgsApps.WriteMsg("Instalado, Abra o ícone vermelho com o nome AnyDesk em sua área de trabalho. Por favor!");
         }
         private bool killProcess()
         {
             _processHandle = new Handle();
-           return _processHandle.KillProcessByName("AnyDeskMSI");
+            return _processHandle.KillProcessByName("AnyDeskMSI");
         }
-
-
 
 
         public async Task AnyDeskFix()

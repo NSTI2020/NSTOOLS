@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Threading.Tasks;
 
 namespace NsTools.Useful.Processes.Handle
 {
@@ -24,5 +25,27 @@ namespace NsTools.Useful.Processes.Handle
             }
             return Killed;
         }
+
+        public bool Pro(string name)
+        {
+           
+            Processes = Process.GetProcessesByName(name);
+            foreach (Process p in Processes)
+            {
+                while (!p.HasExited)
+                {
+                    p.Kill();
+                    Killed = true;
+                }
+            }
+            return Killed;
+        }
+
+       /* public async Task<Process> tt()
+        {
+          return await KillProcessByName("");
+        }*/
+
+
     }
 }

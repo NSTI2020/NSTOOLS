@@ -4,12 +4,13 @@ using System.Text;
 
 namespace NsTools.Exceptions
 {
-    class ZipExceptions:ApplicationException
+    class ZipExceptions : ApplicationException
     {
-        public ZipExceptions(string message):base(message)
+        public ZipExceptions(string message) : base(message)
         {
 
         }
+
 
     }
 }
