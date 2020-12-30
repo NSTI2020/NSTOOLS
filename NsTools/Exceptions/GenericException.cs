@@ -9,7 +9,6 @@ namespace NsTools.Exceptions
 
         }
     }
-
     public class RegistryException : ApplicationException
     {
         public RegistryException(string msg) : base(msg)
@@ -17,10 +16,21 @@ namespace NsTools.Exceptions
 
         }
     }
+    public class UserAccountException : ApplicationException
+    {
+        public UserAccountException(string msg) : base(msg)
+        {
 
+        }
+    }
 
+    public class GroupAccountException : ApplicationException
+    {
+        public GroupAccountException(string msg) : base(msg)
+        {
 
-
+        }
+    }
 
 
 
